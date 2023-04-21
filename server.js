@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const app = express();
 
 // Set the desired port for your backend localy
-const localPORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Initialize the weather data object with default values for temperature and humidity
 var weatherData = {
@@ -36,6 +36,7 @@ app.get("/weather", (req, res) => {
 });
 
 // Start the server and listen for incoming requests on the specified port
-app.listen(process.env.PORT || localPORT, () => {
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+console.log(`Server is running on port ${PORT}`);
